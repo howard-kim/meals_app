@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:meals/providers/filters_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// import 'package:meals/screens/tabs.dart';
+// import 'package:meals/widgets/main_drawer.dart';
+import 'package:meals/providers/filters_provider.dart';
 
 class FiltersScreen extends ConsumerWidget {
   const FiltersScreen({super.key});
@@ -8,6 +11,7 @@ class FiltersScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final activeFilters = ref.watch(filtersProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Filters'),
@@ -44,7 +48,7 @@ class FiltersScreen extends ConsumerWidget {
                   .setFilter(Filter.lactoseFree, isChecked);
             },
             title: Text(
-              'lactose-free',
+              'Lactose-free',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
